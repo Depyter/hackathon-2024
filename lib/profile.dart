@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'data_service.dart';
 
 
 
@@ -48,7 +49,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),),),
         bottomNavigationBar: Row(
         children: <Widget>[
-          ElevatedButton(onPressed: () {_textEditingController.clear();_increment(); },
+          ElevatedButton(onPressed: () {addanswer(_textEditingController.text);_textEditingController.clear();_increment(); },
           child: Text("Next")),
         ]
     ),
@@ -64,7 +65,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),),),
         bottomNavigationBar: Row(
         children: <Widget>[
-          ElevatedButton(onPressed: () {_textEditingController.clear(); _decrement(); },
+          ElevatedButton(onPressed: () {addanswer(_textEditingController.text);_textEditingController.clear(); _decrement(); },
           child: Text("Prev")),
         ]
     ),
@@ -81,9 +82,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),),),
         bottomNavigationBar: Row(
         children: <Widget>[
-          ElevatedButton(onPressed: () {_textEditingController.clear();_decrement(); },
+          ElevatedButton(onPressed: () {addanswer(_textEditingController.text);_textEditingController.clear();_decrement(); },
           child: Text("Prev")),
-          ElevatedButton(onPressed: () {_textEditingController.clear();_increment(); },
+          ElevatedButton(onPressed: () {addanswer(_textEditingController.text);_textEditingController.clear();_increment(); },
           child: Text("Next")),
         ]
     ),
