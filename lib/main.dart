@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
   options: DefaultFirebaseOptions.currentPlatform,
 );
@@ -23,32 +24,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Demo app tutorial"),
           backgroundColor: Colors.blueAccent,
-          leading: Icon(Icons.menu),
-          actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.logout))
-          ],
         ),
-        body: ListView(
-          children: [
-            // 1st child
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.lightBlue,
-            ),
-            // 2nd child
-            Container(
-              height: 250,
-              width: 250,
-              color: Colors.blueAccent,
-            ),
-            //3rd child
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.lightBlue,
-            ),
-          ],)
+        drawer: Drawer(
+          backgroundColor: Colors.lightBlue,
+        ),
+        body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) => ListTile(
+            title: Text(index.toString()),
+          ),
+        )
       ),
     );
   }
