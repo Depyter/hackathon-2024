@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'choose_suit.dart';
 
 class SignUp extends StatelessWidget {
   SignUp();
@@ -13,26 +14,24 @@ class SignUp extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.4,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.orangeAccent,
+                color: const Color(0xFFF97A18),
                 borderRadius: new BorderRadius.circular(20.0),
               ),
-              
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Easing Finances,",
-                      ),
-                      Text(
-                        "Become Empowered!",
-                      ),
-                    ],
-                  ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Easing Finances,",
+                    ),
+                    Text(
+                      "Become Empowered!",
+                    ),
+                  ],
                 ),
-             
+              ),
             ),
             Padding(
                 padding: EdgeInsets.all(10),
@@ -100,18 +99,25 @@ class SignUp extends StatelessWidget {
                     child: Container(
                       height: 30,
                       width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
-                        onPressed: () {
-                          // Validate returns true if the form is valid, or false
-                          // otherwise.
-                        },
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
+                      child: Builder(builder: (context) {
+                        return ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFF97A18),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ChooseSuit(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        );
+                      }),
                     )),
               ],
             ),

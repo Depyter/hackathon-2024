@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'interests.dart';
 
 class ChooseSuit extends StatelessWidget {
   ChooseSuit();
@@ -6,13 +7,17 @@ class ChooseSuit extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.orangeAccent,
+        appBar: AppBar(
+          //title: Text('title'),
+          backgroundColor: const Color(0xFFF97A18),
+        ),
+        backgroundColor: const Color(0xFFF97A18),
         body: Center(
           child: Column(
             children: [
               Text("Choose the suit that suits you"),
               Container(
-                height: MediaQuery.of(context).size.height * 0.7,
+                height: MediaQuery.of(context).size.height * 0.8,
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -31,7 +36,14 @@ class ChooseSuit extends StatelessWidget {
                           ),
                           iconSize: MediaQuery.of(context).size.width * 0.3,
                           icon: Icon(Icons.star),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InterestsPage(),
+                              ),
+                            );
+                          },
                         ),
                       );
                     }),
