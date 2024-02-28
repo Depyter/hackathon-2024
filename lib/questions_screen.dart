@@ -62,6 +62,20 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
           ),
         ),
+        bottomNavigationBar: BottomAppBar(
+          child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFF97A18),
+                          ),
+                          onPressed: () {
+                           
+                          },
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+        ),
       ),
     );
   }
