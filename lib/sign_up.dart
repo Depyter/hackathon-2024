@@ -17,19 +17,20 @@ class SignUp extends StatelessWidget {
                 color: const Color(0xFFF97A18),
                 borderRadius: new BorderRadius.circular(20.0),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Easing Finances,",
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Easing Finances, \nBecome Empowered!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFFFFF5F5),
+                      fontSize: 24,
+                      fontFamily: 'Lexend Deca',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
                     ),
-                    Text(
-                      "Become Empowered!",
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
