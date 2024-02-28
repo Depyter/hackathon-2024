@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'choose_suit.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   SignUp();
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController _email_controller = TextEditingController();
+    TextEditingController _usrname_controller = TextEditingController();
+    TextEditingController _pass_controller = TextEditingController();
     return MaterialApp(
       home: Scaffold(
         body: Column(
@@ -44,6 +53,7 @@ class SignUp extends StatelessWidget {
                     child: Padding(
                         padding: EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: TextFormField(
+                          controller: _email_controller,
                             decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -62,6 +72,7 @@ class SignUp extends StatelessWidget {
                     child: Padding(
                         padding: EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: TextFormField(
+                          controller: _usrname_controller,
                             decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -80,6 +91,7 @@ class SignUp extends StatelessWidget {
                     child: Padding(
                         padding: EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: TextFormField(
+                          controller: _pass_controller,
                             decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -106,6 +118,9 @@ class SignUp extends StatelessWidget {
                             backgroundColor: const Color(0xFFF97A18),
                           ),
                           onPressed: () {
+                            _pass_controller.clear();
+                            _usrname_controller.clear();
+                            _email_controller.clear();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
