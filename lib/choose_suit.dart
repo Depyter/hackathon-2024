@@ -7,18 +7,39 @@ class ChooseSuit extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.orangeAccent,
-        body: Column(
-          children: [
-            Text("Choose the suit that suits you"),
-            Row(children: [
-              Container(height: MediaQuery.of(context).size.height * 0.4, width: double.infinity, child: Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Three")))),
-              Container(height: MediaQuery.of(context).size.height * 0.4, width: double.infinity, child: Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Three")))),
-            ],),
-            Row(children: [
-              Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Three"))),
-              Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Three"))),
-            ],),
-          ],
+        body: Center(
+          child: Column(
+            children: [
+              Text("Choose the suit that suits you"),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.7,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: GridView.count(
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                    crossAxisCount: 2,
+                    children: List.generate(4, (index) {
+                      return Container(
+                        child: IconButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                          ),
+                          iconSize: MediaQuery.of(context).size.width * 0.3,
+                          icon: Icon(Icons.star),
+                          onPressed: () {},
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
