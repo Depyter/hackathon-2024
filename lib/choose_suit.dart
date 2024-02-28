@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'interests.dart';
+import 'questions_screen.dart';
 
 class ChooseSuit extends StatelessWidget {
   ChooseSuit();
@@ -40,7 +40,7 @@ class ChooseSuit extends StatelessWidget {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => InterestsPage(),
+                                builder: (context) => QuestionsScreen(),
                               ),
                             );
                           },
