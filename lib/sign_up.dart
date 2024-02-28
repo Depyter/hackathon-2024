@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_2024/add_data.dart';
 import 'choose_suit.dart';
 
 class SignUp extends StatefulWidget {
@@ -118,9 +119,12 @@ class _SignUpState extends State<SignUp> {
                             backgroundColor: const Color(0xFFF97A18),
                           ),
                           onPressed: () {
+                            
+                            Map<String, dynamic> data= {'email': _email_controller.text, 'username': _usrname_controller.text, 'password': _pass_controller.text  };
                             _pass_controller.clear();
                             _usrname_controller.clear();
                             _email_controller.clear();
+                            addUserData(data);
                             Navigator.push(
                               context,
                               MaterialPageRoute(
