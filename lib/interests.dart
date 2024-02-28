@@ -16,7 +16,10 @@ class InterestsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Title'),
+        iconTheme: IconThemeData(
+          color: Colors.white, //change your color here
+        ),
+        //title: Text('Title'),
         backgroundColor: const Color(0xFFF97A18),
       ),
       backgroundColor: const Color(0xFFF97A18),

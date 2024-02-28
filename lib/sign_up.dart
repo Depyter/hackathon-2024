@@ -14,7 +14,7 @@ class SignUp extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.4,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.orangeAccent,
+                color: const Color(0xFFF97A18),
                 borderRadius: new BorderRadius.circular(20.0),
               ),
               child: Padding(
@@ -102,7 +102,8 @@ class SignUp extends StatelessWidget {
                       child: Builder(builder: (context) {
                         return ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                            backgroundColor: const Color(0xFFF97A18),
+                          ),
                           onPressed: () {
                             Navigator.push(
                               context,
